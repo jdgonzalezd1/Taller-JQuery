@@ -81,10 +81,6 @@ $(document).ready(function () {
             },
             Experiencia: {
                 required: "Debe ingresar su experiencia"
-            },
-            submitHandler: function (e) {
-                e.preventDefault();
-                imprimirDatos();
             }
         }
     });

@@ -98,13 +98,10 @@ $(document).ready(function () {
             $('#experiencia').prop('required', false);
         }
     });
-
-
-
 });
 
 function imprimirDatos() {
-    if ($("#formT").valid()){
+    if ($("#formT").valid()) {
         $("#formT").hide();
         $("#imprimirSect").show();
         anadirNodo($("#tipoDoc"));
@@ -112,12 +109,12 @@ function imprimirDatos() {
         anadirNodo($("#nombre"));
         anadirNodo($("#apellido"));
         anadirNodo($("#correo"));
-        anadirNodoCheck($('input[name="Genero"]:checked').val(), "Genero");
+        anadirNodoCheck($('input[name="Genero"]:checked').attr("id"), "Genero");
         anadirNodo($("#profesion"));
         anadirNodo($("#perfil"));
         anadirNodoCheck($("input[name=Hobbie]:checked").map(function () {
             return this.id;
-          }).get().join(","), "Hobbie")
+        }).get().join(", "), "Hobbie")
         anadirNodo($("#experiencia"));
     }
 }
@@ -125,32 +122,20 @@ function imprimirDatos() {
 
 function anadirNodo(x) {
     if (!x.val() == "") {
-        let newH = document.createElement("h6");
-        let newP = document.createElement("p");
-        let newHead = document.createTextNode(x.attr("name"));
-        let newText = document.createTextNode(x.val());
-        newH.appendChild(newHead);
-        newP.appendChild(newText);
-        document.getElementById("imprimirSect").appendChild(newH);
-        document.getElementById("imprimirSect").appendChild(newP);
+        $("#imprimirSect").append("<h6>" + x.attr("name") + "</h6>");
+        $("#imprimirSect").append("<p>" + x.val() + "</p>");
     }
 }
 
-function obtenerValores(){
+function obtenerValores() {
     $("input[name=]:checked").map(function () {
         return this.value;
-      }).get().join(",")
+    }).get().join(",")
 }
 
 function anadirNodoCheck(x, tag) {
-    let newH = document.createElement("h6");
-    let newP = document.createElement("p");
-    let newHead = document.createTextNode(tag);
-    let newText = document.createTextNode(x);
-    newH.appendChild(newHead);
-    newP.appendChild(newText);
-    document.getElementById("imprimirSect").appendChild(newH);
-    document.getElementById("imprimirSect").appendChild(newP);
+    $("#imprimirSect").append("<h6>" + tag + "</h6>");
+    $("#imprimirSect").append("<p>" + x + "</p>")
 }
 
 

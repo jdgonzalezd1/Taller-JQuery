@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Taller JS</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        label.error {
+            color: red;
+            font-size: 1rem;
+            display: block;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="mask" style="background-color: rgba(31, 34, 231, 0.6);">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-white">
+                    <h1 class="mb-5" style="font-family:Arial, sans-serif;">Formulario</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <form id="formT" name="formularioTaller" method="post">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <label for="tipoDoc">Tipo de documento</label><br>
+                    <select id="tipoDoc" name="Documento" class="form-control" required>
+                        <option value="">--Seleccione un tipo--</option>
+                        <option value="CC">Cedula de Ciudadania</option>
+                        <option value="TI">Documento de identidad</option>
+
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="NumDoc">Numero de documento</label><br>
+                    <input type="text" id="numDoc" class="form-control" name="NumDoc" required><br>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <label for="Nombre">Nombre</label>
+                    <input type="text" id="nombre" name="Nombre" class="form-control" required minlength="3"
+                        maxlength="45">
+                </div>
+                <div class="col">
+                    <label for="text2">Apellido</label><br>
+                    <input type="text" id="apellido" name="Apellido" class="form-control" required minlength="3"
+                        maxlength="45"><br>
+                </div>
+            </div>
+            <label for="Correo">Correo</label><br>
+            <input type="email" id="correo" name="Correo" class="form-control" required>
+        </div>
+        <div class="container">
+            <label>Genero</label><br>
+            <div class="form-check">
+                <input type="radio" class="genero form-check-input" id="Masculino" name="Genero" value="M" required>
+                <label class="form-check-label" for="macho">Masculino</label><br>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="genero form-check-input" id="Femenino" name="Genero" value="F" required>
+                <label class="form-check-label" for="hembra">Femenino</label><br>
+            </div>
+        </div>
+        <div class="container">
+            <label for="Profesion">Profesion</label><br>
+            <input type="text" id="profesion" name="Profesion" class="form-control" required maxlength="75"><br>
+            <label for="Perfil">Perfil</label><br>
+            <textarea id="perfil" name="Perfil" rows="10" cols="50" class="form-control" required
+                maxlength="250"></textarea><br>
+        </div>
+
+        <div class="container">
+            <label>¿Cuales son sus Hobbies?</label>
+            <div class="form-check">
+                <input type="checkbox" class="checkboxH form-check-input" id="Caminar" name="Hobbie"
+                    class="form-control">
+                <label for="Caminar" class="form-check-label">Caminar</label><br>
+                <input type="checkbox" class="checkboxH form-check-input" id="Ejercicio" name="Hobbie"
+                    class="form-control">
+                <label for="Ejercicio" class="form-check-label">Ejercicio</label><br>
+                <input type="checkbox" class="checkboxH form-check-input" id="Ciclismo" name="Hobbie"
+                    class="form-control">
+                <label for="Ciclismo" class="form-check-label">Ciclismo</label><br>
+                <input type="checkbox" class="checkboxH form-check-input" id="Futbol" name="Hobbie"
+                    class="form-control">
+                <label for="Futbol" class="form-check-label">Futbol</label><br>
+                <input type="checkbox" class="checkboxH form-check-input" id="Tejo" name="Hobbie" class="form-control">
+                <label for="Tejo" class="form-check-label">Tejo</label><br>
+            </div>
+        </div>
+
+        <div class="container">
+            <label>¿Tiene experiencia laboral?</label><br>
+            <div class="form-check">
+                <input type="checkbox" class="checkboxE form-check-input" id="exp1" name="Exp1"
+                    class="form-check-input">
+                <label for="Exp1" class="form-check-label">Si</label><br>
+            </div>
+            <textarea id="experiencia" name="Experiencia" rows="10" cols="50" style="display:none;"
+                class="form-control"></textarea>
+        </div>
+        <div class="container">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="reset" class="btn btn-secondary">Reiniciar</button>
+        </div>
+        <br>
+    </form>
+    <div id="imprimirSect" class="container" style="display:none;"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+
+    <script src="JQuery.js"></script>
